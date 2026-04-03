@@ -272,7 +272,7 @@ drawStarfield();
 /* ══════════════════════════════════════
    PAGE NAVIGATION
 ══════════════════════════════════════ */
-const pageOrder = ['home', 'planets', 'blackholes', 'galaxies', 'universe', 'wormholes', 'sitemap'];
+const pageOrder = ['home', 'planets', 'blackholes', 'galaxies', 'universe', 'wormholes'];
 let currentPageIdx = 0;
 
 function showPage(pageName) {
