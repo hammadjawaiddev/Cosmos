@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>COSMOS — The Eight Planets</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;900&family=Raleway:wght@200;300;400;600&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <meta name="keywords" content="Cosmos, cosmos, Wormholes, Universe, Blackholes">
+  <meta name="description" content="Beyond Time Beyond Gravity">
+</head>
+<body data-page="planets">
+
+<!-- LOADING SCREEN -->
+<div id="loader">
+  <div class="loader-spinner"></div>
+  <p class="loader-eyebrow">✦ NASA · ESA · HUBBLE ✦</p>
+  <h1 class="loader-title">COSMOS</h1>
+  <p class="loader-tagline">Entering The Cosmos…</p>
+</div>
+
+<!-- CUSTOM CURSOR -->
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- STARFIELD -->
+<canvas id="starfield"></canvas>
+
+<!-- NAVIGATION -->
+<nav id="mainNav">
+  <a href="index.html" class="nav-logo" data-page="home">✦ COSMOS</a>
+  <button class="nav-hamburger" id="navHamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html" data-page="home">Home</a></li>
+    <li><a href="planets.html" data-page="planets">Planets</a></li>
+    <li><a href="blackholes.html" data-page="blackholes">Black Holes</a></li>
+    <li><a href="galaxies.html" data-page="galaxies">Galaxies</a></li>
+    <li><a href="universe.html" data-page="universe">Universe</a></li>
+    <li><a href="wormholes.html" data-page="wormholes">Wormholes</a></li>
+  </ul>
+</nav>
+
+<!-- PLANETS PAGE -->
+<div id="page-planets" class="page active">
+
+  <section class="page-hero" style="background-image: url('images/planets-background-image.avif');">
+    <div class="page-hero-bg" style="background-image: url('images/planets-background-image.avif'); background-size: contain; background-repeat: no-repeat; background-position: center bottom; opacity:0.08;"></div>
+    <div class="page-hero-overlay"></div>
+    <p class="page-subtitle anim-fade-up" style="--delay:0.2s">Our Solar System</p>
+    <h1 class="page-title anim-fade-up" style="--delay:0.4s">The Eight Planets</h1>
+    <div class="page-divider anim-fade-up" style="--delay:0.6s"></div>
+  </section>
+
+  <div class="planets-grid">
+
+    <article class="planet-card reveal">
+      <div class="planet-img-wrap">
+        <img src="images/mercury.webp" alt="Mercury" loading="lazy">
+        <div class="planet-img-glow" style="--glow: #b0836a;"></div>
+      </div>
+      <div class="planet-body">
+        <div class="planet-header">
+          <div>
+            <h2 class="planet-name">Mercury</h2>
+            <div class="planet-type">Terrestrial &nbsp;·&nbsp; Innermost Planet</div>
+          </div>
+          <span class="planet-order">01</span>
+        </div>
+        <p class="planet-desc">The smallest planet in our solar system, Mercury's heavily cratered surface endures the most extreme temperature swings. Without an atmosphere to retain or deflect heat, its surface swings from −173 °C at night to 427 °C at noon — all within a single Mercury day.</p>
+        <div class="planet-stats">
+          <div class="stat-item"><div class="stat-label">Distance</div><div class="stat-value">0.39 AU</div></div>
+          <div class="stat-item"><div class="stat-label">Year</div><div class="stat-value">88 days</div></div>
+          <div class="stat-item"><div class="stat-label">Temp Range</div><div class="stat-value">−173 → 427°C</div></div>
+          <div class="stat-item"><div class="stat-label">Moons</div><div class="stat-value">0</div></div>
+        </div>
+      </div>
+    </article>
+
+    <article class="planet-card reveal">
+      <div class="planet-img-wrap">
+        <img src="images/venus.webp" alt="Venus" loading="lazy">
+        <div class="planet-img-glow" style="--glow: #d4a852;"></div>
+      </div>
+      <div class="planet-body">
+        <div class="planet-header">
+          <div>
+            <h2 class="planet-name">Venus</h2>
+            <div class="planet-type">Terrestrial &nbsp;·&nbsp; Hottest Planet</div>
+          </div>
+          <span class="planet-order">02</span>
+        </div>
+        <p class="planet-desc">Shrouded in thick clouds of sulfuric acid, Venus is Earth's twisted twin. Its runaway greenhouse effect pushes surface temperatures to 462 °C — hot enough to melt lead — while atmospheric pressure is 92 times that of Earth. It also rotates backwards relative to most planets.</p>
+        <div class="planet-stats">
+          <div class="stat-item"><div class="stat-label">Distance</div><div class="stat-value">0.72 AU</div></div>
+          <div class="stat-item"><div class="stat-label">Year</div><div class="stat-value">225 days</div></div>
+          <div class="stat-item"><div class="stat-label">Surface Temp</div><div class="stat-value">462°C avg</div></div>
+          <div class="stat-item"><div class="stat-label">Moons</div><div class="stat-value">0</div></div>
+        </div>
+      </div>
+    </article>
+
+    <article class="planet-card reveal">
+      <div class="planet-img-wrap">
+        <img src="images/earth.webp" alt="Earth — The Blue Marble" loading="lazy">
+        <div class="planet-img-glow" style="--glow: #4fc3f7;"></div>
+      </div>
+      <div class="planet-body">
+        <div class="planet-header">
+          <div>
+            <h2 class="planet-name">Earth</h2>
+            <div class="planet-type">Terrestrial &nbsp;·&nbsp; Our Home</div>
+          </div>
+          <span class="planet-order">03</span>
+        </div>
+        <p class="planet-desc">The only known world harboring life, Earth's liquid oceans, oxygen-rich atmosphere, and magnetic field create a rare sanctuary in the cosmos. Photographed from the Moon in 1972 as the "Blue Marble," our planet appears as a fragile jewel suspended in the void.</p>
+        <div class="planet-stats">
+          <div class="stat-item"><div class="stat-label">Distance</div><div class="stat-value">1.00 AU</div></div>
+          <div class="stat-item"><div class="stat-label">Year</div><div class="stat-value">365.25 days</div></div>
+          <div class="stat-item"><div class="stat-label">Ocean Coverage</div><div class="stat-value">71%</div></div>
+          <div class="stat-item"><div class="stat-label">Moons</div><div class="stat-value">1</div></div>
+        </div>
+      </div>
+    </article>
+
+    <article class="planet-card reveal">
+      <div class="planet-img-wrap">
+        <img src="images/mars.webp" alt="Mars — The Red Planet" loading="lazy">
+        <div class="planet-img-glow" style="--glow: #ef5350;"></div>
+      </div>
+      <div class="planet-body">
+        <div class="planet-header">
+          <div>
+            <h2 class="planet-name">Mars</h2>
+            <div class="planet-type">Terrestrial &nbsp;·&nbsp; The Red Planet</div>
+          </div>
+          <span class="planet-order">04</span>
+        </div>
+        <p class="planet-desc">Mars hosts Olympus Mons — the solar system's tallest volcano at 21.9 km — and ancient river valleys suggesting a once-wetter past. Polar ice caps of water and CO₂ frost survive today. NASA's Perseverance rover is actively searching for signs of ancient microbial life.</p>
+        <div class="planet-stats">
+          <div class="stat-item"><div class="stat-label">Distance</div><div class="stat-value">1.52 AU</div></div>
+          <div class="stat-item"><div class="stat-label">Year</div><div class="stat-value">687 days</div></div>
+          <div class="stat-item"><div class="stat-label">Temp Range</div><div class="stat-value">−153 → 20°C</div></div>
+          <div class="stat-item"><div class="stat-label">Moons</div><div class="stat-value">2</div></div>
+        </div>
+      </div>
+    </article>
+
+    <article class="planet-card reveal">
+      <div class="planet-img-wrap">
+        <img src="images/jupitar.webp" alt="Jupiter" loading="lazy">
+        <div class="planet-img-glow" style="--glow: #d4703a;"></div>
+      </div>
+      <div class="planet-body">
+        <div class="planet-header">
+          <div>
+            <h2 class="planet-name">Jupiter</h2>
+            <div class="planet-type">Gas Giant &nbsp;·&nbsp; Largest Planet</div>
+          </div>
+          <span class="planet-order">05</span>
+        </div>
+        <p class="planet-desc">Jupiter's Great Red Spot — a storm wider than Earth — has raged for over 350 years. So massive that all other planets could fit inside it, Jupiter acts as the solar system's gravitational shield, deflecting comets and asteroids that might otherwise threaten the inner planets.</p>
+        <div class="planet-stats">
+          <div class="stat-item"><div class="stat-label">Distance</div><div class="stat-value">5.20 AU</div></div>
+          <div class="stat-item"><div class="stat-label">Year</div><div class="stat-value">11.9 yrs</div></div>
+          <div class="stat-item"><div class="stat-label">Mass (Earth=1)</div><div class="stat-value">317.8×</div></div>
+          <div class="stat-item"><div class="stat-label">Moons</div><div class="stat-value">95</div></div>
+        </div>
+      </div>
+    </article>
+
+    <article class="planet-card reveal">
+      <div class="planet-img-wrap">
+        <img src="images/saturn.jpg" alt="Saturn" loading="lazy">
+        <div class="planet-img-glow" style="--glow: #c8a964;"></div>
+      </div>
+      <div class="planet-body">
+        <div class="planet-header">
+          <div>
+            <h2 class="planet-name">Saturn</h2>
+            <div class="planet-type">Gas Giant &nbsp;·&nbsp; Lord of the Rings</div>
+          </div>
+          <span class="planet-order">06</span>
+        </div>
+        <p class="planet-desc">Saturn's breathtaking ring system spans 282,000 km but is only about 10 meters thick — paper-thin on a cosmic scale. The rings are made of ice and rock ranging from dust grains to house-sized boulders. Saturn is so low-density it could theoretically float on water.</p>
+        <div class="planet-stats">
+          <div class="stat-item"><div class="stat-label">Distance</div><div class="stat-value">9.58 AU</div></div>
+          <div class="stat-item"><div class="stat-label">Year</div><div class="stat-value">29.5 yrs</div></div>
+          <div class="stat-item"><div class="stat-label">Ring Span</div><div class="stat-value">282,000 km</div></div>
+          <div class="stat-item"><div class="stat-label">Moons</div><div class="stat-value">146</div></div>
+        </div>
+      </div>
+    </article>
+
+    <article class="planet-card reveal">
+      <div class="planet-img-wrap">
+        <img src="images/uranus.webp" alt="Uranus" loading="lazy">
+        <div class="planet-img-glow" style="--glow: #80cbc4;"></div>
+      </div>
+      <div class="planet-body">
+        <div class="planet-header">
+          <div>
+            <h2 class="planet-name">Uranus</h2>
+            <div class="planet-type">Ice Giant &nbsp;·&nbsp; Sideways Planet</div>
+          </div>
+          <span class="planet-order">07</span>
+        </div>
+        <p class="planet-desc">Uranus rolls around the Sun on its side — its axial tilt of 97.8° is thought to result from a massive primordial collision. This creates extreme 42-year seasons of continuous sunlight followed by 42 years of total darkness. Its pale cyan color comes from methane in its atmosphere absorbing red light.</p>
+        <div class="planet-stats">
+          <div class="stat-item"><div class="stat-label">Distance</div><div class="stat-value">19.19 AU</div></div>
+          <div class="stat-item"><div class="stat-label">Year</div><div class="stat-value">84 yrs</div></div>
+          <div class="stat-item"><div class="stat-label">Axial Tilt</div><div class="stat-value">97.8°</div></div>
+          <div class="stat-item"><div class="stat-label">Moons</div><div class="stat-value">28</div></div>
+        </div>
+      </div>
+    </article>
+
+    <article class="planet-card reveal">
+      <div class="planet-img-wrap">
+        <img src="images/neptune.webp" alt="Neptune" loading="lazy">
+        <div class="planet-img-glow" style="--glow: #5c6bc0;"></div>
+      </div>
+      <div class="planet-body">
+        <div class="planet-header">
+          <div>
+            <h2 class="planet-name">Neptune</h2>
+            <div class="planet-type">Ice Giant &nbsp;·&nbsp; Windiest Planet</div>
+          </div>
+          <span class="planet-order">08</span>
+        </div>
+        <p class="planet-desc">Neptune's supersonic winds reach 2,100 km/h — the fastest in the solar system — driven by internal heat rather than sunlight. Its largest moon Triton orbits in the opposite direction to Neptune's rotation, and is slowly spiraling inward; in ~3.6 billion years it will be torn apart to form a ring system rivalling Saturn's.</p>
+        <div class="planet-stats">
+          <div class="stat-item"><div class="stat-label">Distance</div><div class="stat-value">30.07 AU</div></div>
+          <div class="stat-item"><div class="stat-label">Year</div><div class="stat-value">164.8 yrs</div></div>
+          <div class="stat-item"><div class="stat-label">Max Wind</div><div class="stat-value">2,100 km/h</div></div>
+          <div class="stat-item"><div class="stat-label">Moons</div><div class="stat-value">16</div></div>
+        </div>
+      </div>
+    </article>
+
+  </div>
+
+  <footer><p>✦ COSMOS — Planetary images: NASA / JPL-Caltech / ESA / Public Domain ✦</p></footer>
+</div>
+
+<!-- SPOTIFY WIDGET -->
+<div class="spotify-widget">
+  <div class="spotify-player" id="spotifyPlayer">
+    <div class="spotify-header">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="#1DB954"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+      <span>Now Playing</span>
+      <button class="spotify-close" onclick="toggleSpotify()">✕</button>
+    </div>
+    <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/track/5aaXqH8rgKZxg61HjECldi?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    <div class="spotify-track-info">
+      <p class="track-name">No Time For Caution</p>
+      <p class="track-artist">Hans Zimmer — Interstellar OST</p>
+    </div>
+  </div>
+  <div class="spotify-tooltip">🎵 Play Interstellar OST</div>
+  <button class="spotify-btn" id="spotifyBtn" onclick="toggleSpotify()" aria-label="Toggle music player">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/>
+    </svg>
+    <span class="spotify-pulse"></span>
+  </button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

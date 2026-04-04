@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>COSMOS — Universe & Theories</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;900&family=Raleway:wght@200;300;400;600&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <meta name="keywords" content="Cosmos, cosmos, Wormholes, Universe, Blackholes">
+  <meta name="description" content="Beyond Time Beyond Gravity">
+</head>
+<body data-page="universe">
+
+<!-- LOADING SCREEN -->
+<div id="loader">
+  <div class="loader-spinner"></div>
+  <p class="loader-eyebrow">✦ NASA · ESA · HUBBLE ✦</p>
+  <h1 class="loader-title">COSMOS</h1>
+  <p class="loader-tagline">Entering The Cosmos…</p>
+</div>
+
+<!-- CUSTOM CURSOR -->
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- STARFIELD -->
+<canvas id="starfield"></canvas>
+
+<!-- NAVIGATION -->
+<nav id="mainNav">
+  <a href="index.html" class="nav-logo" data-page="home">✦ COSMOS</a>
+  <button class="nav-hamburger" id="navHamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html" data-page="home">Home</a></li>
+    <li><a href="planets.html" data-page="planets">Planets</a></li>
+    <li><a href="blackholes.html" data-page="blackholes">Black Holes</a></li>
+    <li><a href="galaxies.html" data-page="galaxies">Galaxies</a></li>
+    <li><a href="universe.html" data-page="universe">Universe</a></li>
+    <li><a href="wormholes.html" data-page="wormholes">Wormholes</a></li>
+  </ul>
+</nav>
+
+<!-- UNIVERSE & THEORIES PAGE -->
+<div id="page-universe" class="page active">
+
+  <section class="page-hero">
+    <div class="page-hero-bg parallax-bg" style="background-image: url('images/background-image.jpg');"></div>
+    <div class="page-hero-overlay" style="background: linear-gradient(to bottom, rgba(0,0,10,0.4), rgba(0,0,10,0.95));"></div>
+    <p class="page-subtitle anim-fade-up" style="--delay:0.2s">The Greatest Questions</p>
+    <h1 class="page-title anim-fade-up" style="--delay:0.4s">Universe &amp; Theories</h1>
+    <div class="page-divider anim-fade-up" style="--delay:0.6s"></div>
+  </section>
+
+  <div class="universe-composition reveal">
+    <div class="composition-bar">
+      <div class="comp-segment" style="width:68%; background: linear-gradient(90deg, #7b2fff, #5c1de8);" data-label="Dark Energy 68%"></div>
+      <div class="comp-segment" style="width:27%; background: linear-gradient(90deg, #1a237e, #283593);" data-label="Dark Matter 27%"></div>
+      <div class="comp-segment" style="width:5%; background: linear-gradient(90deg, #00d4ff, #00838f);" data-label="Ordinary Matter 5%"></div>
+    </div>
+    <div class="composition-legend">
+      <div class="legend-item"><span style="background:var(--glow-purple)"></span>Dark Energy — 68%</div>
+      <div class="legend-item"><span style="background:#283593"></span>Dark Matter — 27%</div>
+      <div class="legend-item"><span style="background:var(--glow-cyan)"></span>Ordinary Matter — 5%</div>
+    </div>
+  </div>
+
+  <div class="universe-image-feature reveal">
+    <div class="univ-img-wrap">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/ESA_Planck_CMB.jpg/1920px-ESA_Planck_CMB.jpg" alt="Cosmic Microwave Background — ESA Planck" loading="lazy">
+      <div class="univ-img-overlay">
+        <span class="caption-tag">ESA PLANCK SATELLITE · 2013</span>
+        <p>Cosmic Microwave Background Radiation — the afterglow of the Big Bang, 380,000 years after the beginning of time. Temperature variations of ±0.0001 K encode the seeds of every galaxy.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="theories-grid">
+
+    <div class="theory-card reveal" data-number="01">
+      <div class="theory-image">
+        <img src="images/bigbang.avif" alt="CMB" loading="lazy">
+      </div>
+      <div class="theory-tag">Cosmology</div>
+      <h3>The Big Bang</h3>
+      <p>13.8 billion years ago, the universe emerged from an infinitely hot, dense singularity. In the first 10⁻³² seconds, cosmic inflation expanded space exponentially. The CMB — detected in 1965 — is the fossil light from this era, cooled to 2.73 K by the universe's expansion.</p>
+    </div>
+
+    <div class="theory-card reveal" data-number="02">
+      <div class="theory-image">
+        <img src="images/darkmatter.webp" alt="Bullet Cluster dark matter evidence" loading="lazy">
+      </div>
+      <div class="theory-tag">Mystery</div>
+      <h3>Dark Matter</h3>
+      <p>27% of the universe by mass-energy, dark matter is invisible yet detectable through gravitational lensing. The Bullet Cluster collision provided the most direct evidence — hot gas slowed down, but dark matter (shown in blue by lensing maps) sailed straight through.</p>
+    </div>
+
+    <div class="theory-card reveal" data-number="03">
+      <div class="theory-image">
+        <img src="images/darkenergy.jpeg" alt="Universe expansion dark energy" loading="lazy">
+      </div>
+      <div class="theory-tag">Mystery</div>
+      <h3>Dark Energy</h3>
+      <p>In 1998, type Ia supernovae revealed the universe's expansion is accelerating — the opposite of what gravity alone would predict. This mysterious repulsive force, comprising 68% of the cosmos, may be Einstein's cosmological constant Λ: the energy of empty space itself.</p>
+    </div>
+
+    <div class="theory-card reveal" data-number="04">
+      <div class="theory-image">
+        <img src="images/wormhole.avif" alt="Wormhole spacetime diagram" loading="lazy">
+      </div>
+      <div class="theory-tag">Theoretical Physics</div>
+      <h3>Wormholes</h3>
+      <p>Einstein-Rosen bridges emerge from general relativity's field equations as tunnels through spacetime. A traversable wormhole would require exotic matter with negative energy density. Physicist Kip Thorne's calculations directly informed the visuals in the film <em>Interstellar</em>.</p>
+    </div>
+
+    <div class="theory-card reveal" data-number="05">
+      <div class="theory-image">
+        <img src="images/multiverse.webp" alt="Inflation and multiverse" loading="lazy">
+      </div>
+      <div class="theory-tag">Cosmology</div>
+      <h3>The Multiverse</h3>
+      <p>Eternal inflation theory predicts our Big Bang was one of infinitely many, each spawning a bubble universe with potentially different physical constants. The many-worlds interpretation of quantum mechanics implies every quantum event creates branching realities — making the multiverse one of the most profound and controversial ideas in science.</p>
+    </div>
+
+    <div class="theory-card reveal" data-number="06">
+      <div class="theory-image">
+        <img src="https://images.unsplash.com/photo-1464802686167-b939a6910659?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8dW5pdmVyc2V8ZW58MHx8MHx8fDA%3D" alt="Fate of the universe" loading="lazy">
+      </div>
+      <div class="theory-tag">Fate of the Universe</div>
+      <h3>Cosmic Endpoints</h3>
+      <p>Three scenarios dominate: the <strong style="color:var(--glow-cyan)">Big Freeze</strong> — galaxies drift apart, stars die, black holes evaporate into darkness; the <strong style="color:var(--glow-cyan)">Big Rip</strong> — accelerating expansion tears apart matter itself; the <strong style="color:var(--glow-cyan)">Big Crunch</strong> — gravity reclaims everything into a new singularity. Current evidence favors the Big Freeze, trillions of years hence.</p>
+    </div>
+
+  </div>
+
+  <section class="quote-section reveal">
+    <div class="quote-line"></div>
+    <blockquote>"The universe is under no obligation to make sense to you."</blockquote>
+    <cite>— Neil deGrasse Tyson</cite>
+    <div class="quote-line"></div>
+  </section>
+
+  <footer><p>✦ COSMOS — Universe images: NASA, ESA, Planck Mission, ESO / Public Domain ✦</p></footer>
+</div>
+
+<!-- SPOTIFY WIDGET -->
+<div class="spotify-widget">
+  <div class="spotify-player" id="spotifyPlayer">
+    <div class="spotify-header">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="#1DB954"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+      <span>Now Playing</span>
+      <button class="spotify-close" onclick="toggleSpotify()">✕</button>
+    </div>
+    <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/track/5aaXqH8rgKZxg61HjECldi?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    <div class="spotify-track-info">
+      <p class="track-name">No Time For Caution</p>
+      <p class="track-artist">Hans Zimmer — Interstellar OST</p>
+    </div>
+  </div>
+  <div class="spotify-tooltip">🎵 Play Interstellar OST</div>
+  <button class="spotify-btn" id="spotifyBtn" onclick="toggleSpotify()" aria-label="Toggle music player">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/>
+    </svg>
+    <span class="spotify-pulse"></span>
+  </button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

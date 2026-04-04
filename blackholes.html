@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>COSMOS — Black Holes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;900&family=Raleway:wght@200;300;400;600&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <meta name="keywords" content="Cosmos, cosmos, Wormholes, Universe, Blackholes">
+  <meta name="description" content="Beyond Time Beyond Gravity">
+</head>
+<body data-page="blackholes">
+
+<!-- LOADING SCREEN -->
+<div id="loader">
+  <div class="loader-spinner"></div>
+  <p class="loader-eyebrow">✦ NASA · ESA · HUBBLE ✦</p>
+  <h1 class="loader-title">COSMOS</h1>
+  <p class="loader-tagline">Entering The Cosmos…</p>
+</div>
+
+<!-- CUSTOM CURSOR -->
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- STARFIELD -->
+<canvas id="starfield"></canvas>
+
+<!-- NAVIGATION -->
+<nav id="mainNav">
+  <a href="index.html" class="nav-logo" data-page="home">✦ COSMOS</a>
+  <button class="nav-hamburger" id="navHamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html" data-page="home">Home</a></li>
+    <li><a href="planets.html" data-page="planets">Planets</a></li>
+    <li><a href="blackholes.html" data-page="blackholes">Black Holes</a></li>
+    <li><a href="galaxies.html" data-page="galaxies">Galaxies</a></li>
+    <li><a href="universe.html" data-page="universe">Universe</a></li>
+    <li><a href="wormholes.html" data-page="wormholes">Wormholes</a></li>
+  </ul>
+</nav>
+
+<!-- BLACK HOLES PAGE -->
+<div id="page-blackholes" class="page active">
+
+  <section class="page-hero bh-hero">
+    <div class="page-hero-bg parallax-bg" style="background-image: url(images/blackhole-background.jpg);"></div>
+    <div class="page-hero-overlay" style="background: radial-gradient(ellipse at center, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.85) 70%);"></div>
+    <p class="page-subtitle anim-fade-up" style="--delay:0.2s">The Edge of Everything</p>
+    <h1 class="page-title anim-fade-up" style="--delay:0.4s">Black Holes</h1>
+    <p class="page-hero-caption anim-fade-up" style="--delay:0.6s">First image of a black hole — M87* captured by the Event Horizon Telescope, 2019</p>
+    <div class="page-divider anim-fade-up" style="--delay:0.8s"></div>
+  </section>
+
+  <div class="bh-feature-image reveal">
+    <img src="images/blackhole-background.jpg" alt="Black hole M87*" loading="lazy">
+    <div class="bh-feature-caption">
+      <span class="caption-tag">EVENT HORIZON TELESCOPE · 2019</span>
+      <h3>Messier 87* — 6.5 Billion Solar Masses</h3>
+      <p>The first direct photograph of a black hole's shadow, located 55 million light-years away in the constellation Virgo.</p>
+    </div>
+  </div>
+
+  <div class="bh-panels">
+
+    <div class="bh-info-card reveal">
+      <div class="bh-card-image">
+        <img src="images/ton-618.jpg" alt="Stellar orbits around Sagittarius A*" loading="lazy">
+      </div>
+      <div class="bh-card-body">
+        <div class="info-tag">MILKY WAY CENTER</div>
+        <h3>Sagittarius A*</h3>
+        <p>At the heart of our galaxy lurks Sagittarius A*, a supermassive black hole with a mass of 4 million Suns, compacted into a region smaller than our solar system. In 2022, the Event Horizon Telescope released the first image of Sgr A*, confirming decades of indirect evidence from the orbits of nearby stars.</p>
+        <div class="bh-stat-row">
+          <div class="bh-stat"><span>4 Million M☉</span>Mass</div>
+          <div class="bh-stat"><span>26,000 ly</span>Distance</div>
+          <div class="bh-stat"><span>44M km</span>Schwarzschild Radius</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bh-info-card bh-info-card--reversed reveal">
+      <div class="bh-card-image">
+        <img src="images/blackhole.jpg" alt="Artist impression of stellar black hole" loading="lazy">
+      </div>
+      <div class="bh-card-body">
+        <div class="info-tag">GRAVITATIONAL PHYSICS</div>
+        <h3>The Event Horizon</h3>
+        <p>The event horizon is the "point of no return" — not a physical surface but a mathematical boundary beyond which not even light can escape. An observer falling in would notice nothing unusual at that moment, but an outside observer would watch them slow to a halt and fade into reddish oblivion, frozen in time by gravitational redshift.</p>
+        <div class="bh-stat-row">
+          <div class="bh-stat"><span>∞</span>Time Dilation at Horizon</div>
+          <div class="bh-stat"><span>c</span>Escape Velocity</div>
+          <div class="bh-stat"><span>0 K</span>Entropy at Singularity</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bh-info-card reveal">
+      <div class="bh-card-image">
+        <img src="images/jets.webp" alt="Relativistic jet from a black hole" loading="lazy">
+      </div>
+      <div class="bh-card-body">
+        <div class="info-tag">RELATIVISTIC JETS</div>
+        <h3>Quasars &amp; Jets</h3>
+        <p>When supermassive black holes actively consume surrounding matter, they become quasars — the most luminous sustained objects in the universe, outshining entire galaxies. Magnetic field lines threading through the accretion disk launch bipolar jets of plasma at nearly the speed of light, stretching for thousands of light-years into intergalactic space.</p>
+        <div class="bh-stat-row">
+          <div class="bh-stat"><span>~0.99c</span>Jet Speed</div>
+          <div class="bh-stat"><span>10¹³ L☉</span>Peak Luminosity</div>
+          <div class="bh-stat"><span>Mpc</span>Jet Length Scale</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="full-panel reveal" style="margin: 40px 60px;">
+    <div class="full-panel-badge">QUANTUM MECHANICS</div>
+    <h2>Hawking Radiation &amp; the Information Paradox</h2>
+    <div class="full-panel-grid">
+      <p>In 1974, Stephen Hawking proposed that black holes are not entirely black. Virtual particle pairs constantly pop into existence near the event horizon; when one falls in while the other escapes, the black hole loses energy — and mass. This "Hawking radiation" causes black holes to slowly evaporate over timescales dwarfing the age of the universe.</p>
+      <p>This leads to one of physics' deepest puzzles: the <strong style="color:var(--glow-cyan)">black hole information paradox</strong>. Quantum mechanics demands information is never destroyed; general relativity says everything that falls into a black hole is lost. Resolving this contradiction may require a theory of quantum gravity — the holy grail of modern physics.</p>
+    </div>
+  </div>
+
+  <footer><p>✦ COSMOS — Black hole images: Event Horizon Telescope, ESO, NASA / Public Domain ✦</p></footer>
+</div>
+
+<!-- SPOTIFY WIDGET -->
+<div class="spotify-widget">
+  <div class="spotify-player" id="spotifyPlayer">
+    <div class="spotify-header">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="#1DB954"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+      <span>Now Playing</span>
+      <button class="spotify-close" onclick="toggleSpotify()">✕</button>
+    </div>
+    <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/track/5aaXqH8rgKZxg61HjECldi?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    <div class="spotify-track-info">
+      <p class="track-name">No Time For Caution</p>
+      <p class="track-artist">Hans Zimmer — Interstellar OST</p>
+    </div>
+  </div>
+  <div class="spotify-tooltip">🎵 Play Interstellar OST</div>
+  <button class="spotify-btn" id="spotifyBtn" onclick="toggleSpotify()" aria-label="Toggle music player">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/>
+    </svg>
+    <span class="spotify-pulse"></span>
+  </button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>COSMOS — Wormholes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;900&family=Raleway:wght@200;300;400;600&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <meta name="keywords" content="Cosmos, cosmos, Wormholes, Universe, Blackholes">
+  <meta name="description" content="Beyond Time Beyond Gravity">
+</head>
+<body data-page="wormholes">
+
+<!-- LOADING SCREEN -->
+<div id="loader">
+  <div class="loader-spinner"></div>
+  <p class="loader-eyebrow">✦ NASA · ESA · HUBBLE ✦</p>
+  <h1 class="loader-title">COSMOS</h1>
+  <p class="loader-tagline">Entering The Cosmos…</p>
+</div>
+
+<!-- CUSTOM CURSOR -->
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- STARFIELD -->
+<canvas id="starfield"></canvas>
+
+<!-- NAVIGATION -->
+<nav id="mainNav">
+  <a href="index.html" class="nav-logo" data-page="home">✦ COSMOS</a>
+  <button class="nav-hamburger" id="navHamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html" data-page="home">Home</a></li>
+    <li><a href="planets.html" data-page="planets">Planets</a></li>
+    <li><a href="blackholes.html" data-page="blackholes">Black Holes</a></li>
+    <li><a href="galaxies.html" data-page="galaxies">Galaxies</a></li>
+    <li><a href="universe.html" data-page="universe">Universe</a></li>
+    <li><a href="wormholes.html" data-page="wormholes">Wormholes</a></li>
+  </ul>
+</nav>
+
+<!-- WORMHOLES PAGE -->
+<div id="page-wormholes" class="page active">
+
+  <section class="page-hero wh-hero">
+    <div class="page-hero-bg parallax-bg" style="background-image: url('images/wormhole-background.jpg'); filter: hue-rotate(200deg) brightness(0.55) saturate(1.4);"></div>
+    <div class="page-hero-overlay" style="background: radial-gradient(ellipse at center, rgba(0,0,20,0.35) 0%, rgba(0,0,20,0.92) 80%);"></div>
+    <p class="page-subtitle anim-fade-up" style="--delay:0.2s">Einstein–Rosen Bridges</p>
+    <h1 class="page-title anim-fade-up" style="--delay:0.4s">Wormholes</h1>
+    <p class="page-hero-caption anim-fade-up" style="--delay:0.6s">Theoretical tunnels through the fabric of spacetime — shortcuts across the cosmos</p>
+    <div class="page-divider anim-fade-up" style="--delay:0.8s"></div>
+  </section>
+
+  <div class="wh-opening-image reveal">
+    <img src="images/wormhole.avif" alt="Wormhole spacetime tunnel visualisation" loading="lazy">
+    <div class="wh-opening-caption">
+      <span class="caption-tag">THEORETICAL PHYSICS · GENERAL RELATIVITY</span>
+      <h3>A Fold in the Fabric of Space</h3>
+      <p>If spacetime can be bent, two distant regions might be connected by a shortcut — a wormhole — making cosmic travel theoretically possible.</p>
+    </div>
+  </div>
+
+  <div class="wh-two-col reveal">
+    <div class="wh-text-panel">
+      <div class="info-tag">THE BASICS</div>
+      <h2>What is a Wormhole?</h2>
+      <p>A wormhole — formally called an Einstein–Rosen bridge — is a hypothetical topological feature of spacetime that would fundamentally be a shortcut connecting two separate points in the universe. Predicted by Albert Einstein and Nathan Rosen in 1935 as a consequence of general relativity, wormholes emerge from the same mathematics that describes black holes.</p>
+      <p>Imagine folding a sheet of paper so that two distant points touch. A wormhole is the tunnel that pierces through the fold, allowing travel between those points without traversing the full distance across the sheet. In reality, that "sheet" is the four-dimensional fabric of spacetime itself.</p>
+      <p>While the mathematics is sound, no wormhole has ever been observed. The key barrier: a traversable wormhole requires <strong style="color:var(--glow-cyan)">exotic matter</strong> — material with negative energy density — whose existence remains deeply uncertain.</p>
+    </div>
+    <div class="wh-image-panel">
+      <img src="images/Wormhole_travel.jpg" alt="Wormhole travel — NASA concept art by Les Bossinas" loading="lazy">
+      <p class="wh-img-caption">NASA concept illustration by Les Bossinas — wormhole travel as envisioned for space exploration</p>
+    </div>
+  </div>
+
+  <div class="wh-stats-strip">
+    <div class="wh-stat-item reveal">
+      <span class="wh-stat-num">1935</span>
+      <span class="wh-stat-label">Einstein–Rosen bridge first proposed</span>
+    </div>
+    <div class="wh-stat-item reveal">
+      <span class="wh-stat-num" style="color:var(--glow-gold)">0</span>
+      <span class="wh-stat-label">Wormholes observed to date</span>
+    </div>
+    <div class="wh-stat-item reveal">
+      <span class="wh-stat-num" style="color:var(--glow-purple)">&lt; 0</span>
+      <span class="wh-stat-label">Energy density required (exotic matter)</span>
+    </div>
+    <div class="wh-stat-item reveal">
+      <span class="wh-stat-num">∞</span>
+      <span class="wh-stat-label">Distance potentially bridged</span>
+    </div>
+  </div>
+
+  <section class="wh-cards-section">
+    <div class="wh-section-header reveal">
+      <h2>Key Concepts</h2>
+      <p>The physics, paradoxes, and possibilities of Einstein–Rosen bridges</p>
+    </div>
+
+    <div class="wh-cards-grid">
+
+      <div class="wh-glass-card reveal">
+        <div class="wh-card-icon" style="background: radial-gradient(circle at 30% 30%, rgba(0,212,255,0.2), rgba(0,212,255,0.02));">
+          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="24" cy="24" r="20" stroke="rgba(0,212,255,0.5)" stroke-width="1"/>
+            <ellipse cx="24" cy="24" rx="8" ry="20" stroke="rgba(0,212,255,0.8)" stroke-width="1" stroke-dasharray="3 2"/>
+            <ellipse cx="24" cy="24" rx="20" ry="8" stroke="rgba(0,212,255,0.4)" stroke-width="1" stroke-dasharray="3 2"/>
+          </svg>
+        </div>
+        <h3>Traversable vs. Non-Traversable</h3>
+        <p>The original Einstein–Rosen bridge collapses too rapidly for anything to pass through — it is non-traversable. In 1988, Kip Thorne and Michael Morris proposed that exotic matter with negative energy could hold a wormhole open long enough for travel, creating a <em style="color:var(--glow-cyan)">traversable wormhole</em>.</p>
+      </div>
+
+      <div class="wh-glass-card reveal">
+        <div class="wh-card-icon" style="background: radial-gradient(circle at 30% 30%, rgba(123,47,255,0.2), rgba(123,47,255,0.02));">
+          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M8 40 C 8 8, 40 8, 40 40" stroke="rgba(123,47,255,0.8)" stroke-width="1.5" fill="none"/>
+            <line x1="8" y1="40" x2="40" y2="40" stroke="rgba(123,47,255,0.4)" stroke-width="1" stroke-dasharray="3 2"/>
+            <circle cx="8" cy="40" r="3" fill="rgba(123,47,255,0.6)"/>
+            <circle cx="40" cy="40" r="3" fill="rgba(123,47,255,0.6)"/>
+            <circle cx="24" cy="14" r="3" fill="rgba(0,212,255,0.8)"/>
+          </svg>
+        </div>
+        <h3>Spacetime Topology</h3>
+        <p>General relativity allows spacetime to have complex topological shapes. A wormhole represents a <em style="color:var(--glow-purple)">handle</em> in the topology of space — a connection between two otherwise separate regions. Whether our universe's topology permits such handles is an open question in quantum cosmology.</p>
+      </div>
+
+      <div class="wh-glass-card reveal">
+        <div class="wh-card-icon" style="background: radial-gradient(circle at 30% 30%, rgba(200,160,74,0.2), rgba(200,160,74,0.02));">
+          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="16" cy="24" r="10" stroke="rgba(200,160,74,0.7)" stroke-width="1"/>
+            <circle cx="32" cy="24" r="10" stroke="rgba(200,160,74,0.7)" stroke-width="1"/>
+            <line x1="16" y1="14" x2="32" y2="14" stroke="rgba(200,160,74,0.9)" stroke-width="1.5"/>
+            <line x1="16" y1="34" x2="32" y2="34" stroke="rgba(200,160,74,0.9)" stroke-width="1.5"/>
+          </svg>
+        </div>
+        <h3>Exotic Matter Requirement</h3>
+        <p>To keep a wormhole throat open, its walls must be threaded with matter of <em style="color:var(--glow-gold)">negative energy density</em> — a property that violates the classical energy conditions. The Casimir effect demonstrates that negative energy densities can exist at quantum scales, but whether they can be harnessed at cosmic scales remains unknown.</p>
+      </div>
+
+      <div class="wh-glass-card reveal">
+        <div class="wh-card-icon" style="background: radial-gradient(circle at 30% 30%, rgba(0,212,255,0.2), rgba(0,212,255,0.02));">
+          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6 24 Q24 6 42 24 Q24 42 6 24Z" stroke="rgba(0,212,255,0.6)" stroke-width="1" fill="none"/>
+            <circle cx="24" cy="24" r="4" fill="rgba(0,212,255,0.5)"/>
+            <path d="M24 6 L24 18 M24 30 L24 42" stroke="rgba(0,212,255,0.4)" stroke-width="1" stroke-dasharray="2 2"/>
+          </svg>
+        </div>
+        <h3>The Casimir Effect</h3>
+        <p>Between two uncharged, parallel conducting plates placed mere nanometers apart, the quantum vacuum produces a measurable attractive force — evidence that negative energy densities are physically real. Some physicists argue this is the most plausible mechanism for producing the exotic matter required to stabilize a wormhole throat.</p>
+      </div>
+
+      <div class="wh-glass-card reveal">
+        <div class="wh-card-icon" style="background: radial-gradient(circle at 30% 30%, rgba(123,47,255,0.2), rgba(123,47,255,0.02));">
+          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="24" r="6" stroke="rgba(123,47,255,0.7)" stroke-width="1"/>
+            <circle cx="36" cy="24" r="6" stroke="rgba(0,212,255,0.7)" stroke-width="1"/>
+            <path d="M18 24 Q24 16 30 24" stroke="rgba(200,160,74,0.8)" stroke-width="1.5" fill="none"/>
+            <path d="M18 24 Q24 32 30 24" stroke="rgba(200,160,74,0.4)" stroke-width="1" fill="none" stroke-dasharray="3 2"/>
+          </svg>
+        </div>
+        <h3>ER = EPR Conjecture</h3>
+        <p>In 2013, Juan Maldacena and Leonard Susskind proposed a stunning equivalence: <em style="color:var(--glow-purple)">Einstein–Rosen bridges (wormholes) are the same thing as Einstein–Podolsky–Rosen pairs (quantum entanglement)</em>. Two entangled black holes, in this picture, are connected by a microscopic wormhole — linking quantum mechanics and general relativity at a fundamental level.</p>
+      </div>
+
+      <div class="wh-glass-card reveal">
+        <div class="wh-card-icon" style="background: radial-gradient(circle at 30% 30%, rgba(200,160,74,0.2), rgba(200,160,74,0.02));">
+          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6 42 L42 6" stroke="rgba(200,160,74,0.3)" stroke-width="1" stroke-dasharray="3 2"/>
+            <circle cx="10" cy="38" r="4" fill="rgba(0,212,255,0.5)"/>
+            <circle cx="38" cy="10" r="4" fill="rgba(200,160,74,0.5)"/>
+            <path d="M12 36 Q24 18 36 12" stroke="rgba(0,212,255,0.7)" stroke-width="2" fill="none"/>
+          </svg>
+        </div>
+        <h3>Time Machine Implications</h3>
+        <p>If one mouth of a wormhole is accelerated to near-light speed and then returned, time dilation creates a temporal offset between the two ends. A traveler entering one mouth could theoretically emerge from the other at a different point in time — making a wormhole a potential <em style="color:var(--glow-gold)">time machine</em>. Stephen Hawking's chronology protection conjecture argues nature forbids this.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="wh-dilation-section reveal">
+    <div class="wh-dilation-image">
+      <img src="images/spacetimecurvature.jpg" alt="Spacetime curvature near massive object" loading="lazy">
+    </div>
+    <div class="wh-dilation-body">
+      <div class="info-tag" style="color:var(--glow-gold);border-color:rgba(200,160,74,0.3)">GENERAL RELATIVITY</div>
+      <h2>Time Dilation Near a Wormhole</h2>
+      <p>Any mass-energy curves spacetime, and a wormhole — held open by exotic matter — would create extreme curvature at its throat. As predicted by Einstein's field equations, time passes more slowly in stronger gravitational fields.</p>
+      <p>An observer near the wormhole mouth would age more slowly than one far away. If you spent one hour at the wormhole's throat, years might pass for someone watching from a safe distance — the same effect dramatized in <em style="color:var(--glow-gold)">Interstellar</em>'s Miller's planet sequence.</p>
+      <p>This temporal asymmetry between the two mouths of a wormhole is precisely what gives rise to the theoretical possibility of time travel — and the paradoxes that accompany it.</p>
+      <div class="wh-dilation-stats">
+        <div class="wh-ds-item">
+          <span>Gravitational Time Dilation</span>
+          <em>t' = t √(1 − 2GM/rc²)</em>
+        </div>
+        <div class="wh-ds-item">
+          <span>At wormhole throat (r → r<sub>s</sub>)</span>
+          <em>t' → 0 &nbsp;(time stops)</em>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="full-panel reveal" style="margin: 2px 0; border-radius: 0; border-left: none; border-right: none;">
+    <div class="full-panel-badge" style="color:var(--glow-purple)">INTERSTELLAR · 2014</div>
+    <h2 style="-webkit-text-fill-color: transparent; background: linear-gradient(90deg, #fff, var(--glow-purple)); -webkit-background-clip: text; background-clip: text;">The Science Behind the Film</h2>
+    <div class="full-panel-grid">
+      <p>The wormhole in Christopher Nolan's <em>Interstellar</em> was rendered using equations derived directly by physicist Kip Thorne — the only scientifically accurate depiction of a wormhole in cinema history. The visual rendering engine, developed with the VFX team at Double Negative, simulated gravitational lensing so accurately that it produced scientific papers about the optical appearance of accretion disks around wormholes.</p>
+      <p>Thorne's key insight was that a wormhole mouth would appear as a <strong style="color:var(--glow-purple)">sphere</strong> — not a flat portal — because light from the far side bends around the throat in all directions simultaneously. Stars behind the wormhole would appear as a distorted ring, with the opposite side of the universe visible through the wormhole's interior, warped and magnified by its intense gravity.</p>
+    </div>
+  </div>
+
+  <section class="wh-travel-section">
+    <div class="wh-section-header reveal">
+      <h2>Wormholes &amp; Space Travel</h2>
+      <p>Could Einstein–Rosen bridges ever make interstellar travel a reality?</p>
+    </div>
+    <div class="wh-travel-grid">
+      <div class="wh-travel-card reveal">
+        <div class="wh-travel-num">01</div>
+        <h4>Interstellar Distances</h4>
+        <p>The nearest star system, Alpha Centauri, is 4.37 light-years away. At any speed achievable with conventional propulsion, the journey would take tens of thousands of years. A wormhole bridging the two regions would reduce this to a walk through a tunnel — perhaps seconds of travel, regardless of the distance separated.</p>
+      </div>
+      <div class="wh-travel-card reveal">
+        <div class="wh-travel-num">02</div>
+        <h4>Energy Requirements</h4>
+        <p>Maintaining a macroscopic wormhole would require a negative energy equivalent to the mass-energy of Jupiter, distributed at the wormhole's throat. This is currently beyond any known physical mechanism — but our universe has surprised physicists before. Dark energy itself demonstrates that exotic energy forms exist at cosmological scales.</p>
+      </div>
+      <div class="wh-travel-card reveal">
+        <div class="wh-travel-num">03</div>
+        <h4>Stability Problem</h4>
+        <p>Even if a traversable wormhole could be created, quantum fluctuations at the Planck scale may render it inherently unstable, causing it to collapse faster than any signal or object could pass through. Some theorists suggest that a quantum theory of gravity — string theory or loop quantum gravity — may offer mechanisms for stabilization we cannot yet foresee.</p>
+      </div>
+      <div class="wh-travel-card reveal">
+        <div class="wh-travel-num">04</div>
+        <h4>Natural Wormholes</h4>
+        <p>Some cosmological models suggest that quantum foam — the violent quantum fluctuations at the Planck scale (10⁻³⁵ m) — naturally generates microscopic wormholes that appear and disappear continuously. If such structures could somehow be enlarged and stabilized using exotic matter or advanced technology, they might provide a natural foundation for a traversable bridge.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="quote-section reveal">
+    <div class="quote-line"></div>
+    <blockquote>"Wormholes are a legitimate prediction of Einstein's general theory of relativity. But just because something is allowed by the laws of physics doesn't mean it's achievable in practice."</blockquote>
+    <cite>— Kip Thorne, Nobel Laureate in Physics</cite>
+    <div class="quote-line"></div>
+  </section>
+
+  <footer><p>✦ COSMOS — Wormhole visuals: NASA, ESA, Wikipedia Commons, public domain scientific illustrations ✦</p></footer>
+</div>
+
+<!-- SPOTIFY WIDGET -->
+<div class="spotify-widget">
+  <div class="spotify-player" id="spotifyPlayer">
+    <div class="spotify-header">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="#1DB954"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+      <span>Now Playing</span>
+      <button class="spotify-close" onclick="toggleSpotify()">✕</button>
+    </div>
+    <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/track/5aaXqH8rgKZxg61HjECldi?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    <div class="spotify-track-info">
+      <p class="track-name">No Time For Caution</p>
+      <p class="track-artist">Hans Zimmer — Interstellar OST</p>
+    </div>
+  </div>
+  <div class="spotify-tooltip">🎵 Play Interstellar OST</div>
+  <button class="spotify-btn" id="spotifyBtn" onclick="toggleSpotify()" aria-label="Toggle music player">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/>
+    </svg>
+    <span class="spotify-pulse"></span>
+  </button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

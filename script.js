@@ -5,90 +5,14 @@
 'use strict';
 
 /* ══════════════════════════════════════
-   LOADING SCREEN
+   LOADING SCREEN — guaranteed dismiss
 ══════════════════════════════════════ */
 // (function initLoader() {
 //   const loader = document.getElementById('loader');
 //   const loaderCanvas = document.getElementById('loader-stars');
 //   const loaderStatus = document.getElementById('loaderStatus');
 //   const loaderFill = document.getElementById('loaderFill');
-
-//   // Mini starfield on loader
-//   const lctx = loaderCanvas.getContext('2d');
-//   loaderCanvas.width = window.innerWidth;
-//   loaderCanvas.height = window.innerHeight;
-
-//   const lStars = Array.from({ length: 200 }, () => ({
-//     x: Math.random() * loaderCanvas.width,
-//     y: Math.random() * loaderCanvas.height,
-//     r: Math.random() * 1.2 + 0.2,
-//     a: Math.random(),
-//     speed: Math.random() * 0.015 + 0.005,
-//     offset: Math.random() * Math.PI * 2,
-//   }));
-
-//   let lt = 0;
-//   function drawLoaderStars() {
-//     lctx.clearRect(0, 0, loaderCanvas.width, loaderCanvas.height);
-//     lStars.forEach(s => {
-//       const alpha = 0.3 + Math.sin(lt * s.speed + s.offset) * 0.3;
-//       lctx.beginPath();
-//       lctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
-//       lctx.fillStyle = `rgba(200,220,255,${alpha})`;
-//       lctx.fill();
-//     });
-//     lt++;
-//     if (!loaderDone) requestAnimationFrame(drawLoaderStars);
-//   }
-//   drawLoaderStars();
-
-//   // Status messages
-//   const statusMessages = [
-//     'Calibrating deep-space sensors…',
-//     'Mapping stellar coordinates…',
-//     'Loading Hubble imagery…',
-//     'Computing gravitational fields…',
-//     'Entering the cosmos…',
-//   ];
-
-//   let msgIdx = 0;
-//   let progress = 0;
-//   let loaderDone = false;
-
-//   function advanceLoader() {
-//     if (msgIdx < statusMessages.length) {
-//       loaderStatus.style.opacity = '0';
-//       setTimeout(() => {
-//         loaderStatus.textContent = statusMessages[msgIdx++];
-//         loaderStatus.style.opacity = '1';
-//       }, 200);
-//     }
-//     progress = Math.min(100, progress + (100 / statusMessages.length));
-//     loaderFill.style.width = progress + '%';
-//   }
-
-//   advanceLoader();
-//   const statusInterval = setInterval(advanceLoader, 500);
-
-//   // Dismiss after content loads
-//   function dismissLoader() {
-//     clearInterval(statusInterval);
-//     loaderDone = true;
-//     loaderStatus.textContent = 'Mission ready. ✦';
-//     loaderFill.style.width = '100%';
-//     setTimeout(() => {
-//       loader.classList.add('fade-out');
-//       setTimeout(() => { loader.style.display = 'none'; }, 900);
-//     }, 600);
-//   }
-
-//   if (document.readyState === 'complete') {
-//     setTimeout(dismissLoader, 2000);
-//   } else {
-//     window.addEventListener('load', () => setTimeout(dismissLoader, 1500));
-//     // Fallback – never block > 3.5s
-//     setTimeout(dismissLoader, 3500);
-//   }
+//   ... (original complex loader commented out)
 // })();
 
 (function initLoader() {
@@ -196,7 +120,6 @@ let frame = 0;
 function drawStarfield() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-  // Background nebula gradients
   const nebulas = [
     { x: canvas.width * 0.12, y: canvas.height * 0.2, r: 350, rgba: [100, 40, 220, 0.04] },
     { x: canvas.width * 0.82, y: canvas.height * 0.55, r: 280, rgba: [0, 180, 255, 0.03] },
@@ -212,13 +135,11 @@ function drawStarfield() {
     ctx.fillRect(0, 0, canvas.width, canvas.height);
   });
 
-  // Stars
   stars.forEach(s => {
     const twinkle = Math.sin(frame * s.twinkleFreq + s.phase) * s.twinkleAmp;
     const alpha = Math.max(0.02, Math.min(1, s.baseAlpha + twinkle));
     const [r, g, b] = s.color;
 
-    // Glow for larger stars
     if (s.size > 1) {
       const glow = ctx.createRadialGradient(s.x, s.y, 0, s.x, s.y, s.size * 4);
       glow.addColorStop(0, `rgba(${r},${g},${b},${alpha * 0.4})`);
@@ -235,7 +156,6 @@ function drawStarfield() {
     ctx.fill();
   });
 
-  // Shooting stars
   for (let i = shooters.length - 1; i >= 0; i--) {
     const ss = shooters[i];
     ss.x += ss.vx;
@@ -270,62 +190,74 @@ function drawStarfield() {
 drawStarfield();
 
 /* ══════════════════════════════════════
-   PAGE NAVIGATION
+   PAGE MAP — one HTML file per section
 ══════════════════════════════════════ */
+const pageFiles = {
+  home:       'index.html',
+  planets:    'planets.html',
+  blackholes: 'blackholes.html',
+  galaxies:   'galaxies.html',
+  universe:   'universe.html',
+  wormholes:  'wormholes.html',
+};
+
 const pageOrder = ['home', 'planets', 'blackholes', 'galaxies', 'universe', 'wormholes'];
-let currentPageIdx = 0;
+
+/* Detect which page we are on from <body data-page="…"> */
+const bodyPage = document.body.dataset.page || 'home';
+let currentPageIdx = Math.max(0, pageOrder.indexOf(bodyPage));
+
+/* Mark correct nav link active on load */
+document.querySelectorAll('.nav-links a').forEach(a => {
+  a.classList.toggle('active', a.dataset.page === bodyPage);
+});
 
 function showPage(pageName) {
-  // Validate
-  if (!document.getElementById('page-' + pageName)) return;
+  /* If target div exists in DOM (single-page fallback), toggle it in-place */
+  const target = document.getElementById('page-' + pageName);
+  if (target) {
+    const current = document.querySelector('.page.active');
+    if (current) {
+      current.style.opacity = '0';
+      current.style.transition = 'opacity 0.25s';
+    }
 
-  // Fade current page out briefly
-  const current = document.querySelector('.page.active');
-  if (current) {
-    current.style.opacity = '0';
-    current.style.transition = 'opacity 0.25s';
+    setTimeout(() => {
+      document.querySelectorAll('.page').forEach(p => {
+        p.classList.remove('active');
+        p.style.opacity = '';
+        p.style.transition = '';
+      });
+
+      target.classList.add('active');
+      target.style.opacity = '0';
+      target.style.transition = 'opacity 0.4s';
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => { target.style.opacity = '1'; });
+      });
+
+      window.scrollTo({ top: 0 });
+
+      document.querySelectorAll('.nav-links a').forEach(a => {
+        a.classList.toggle('active', a.dataset.page === pageName);
+      });
+
+      document.getElementById('navLinks').classList.remove('open');
+
+      currentPageIdx = pageOrder.indexOf(pageName);
+      if (currentPageIdx < 0) currentPageIdx = 0;
+
+      setTimeout(triggerReveal, 120);
+      setTimeout(initParallax, 50);
+      setTimeout(glitchText, 200);
+
+    }, current ? 200 : 0);
+
+  } else {
+    /* Navigate to the separate HTML page */
+    const file = pageFiles[pageName];
+    if (file) window.location.href = file;
   }
-
-  setTimeout(() => {
-    // Hide all
-    document.querySelectorAll('.page').forEach(p => {
-      p.classList.remove('active');
-      p.style.opacity = '';
-      p.style.transition = '';
-    });
-
-    // Show target
-    const target = document.getElementById('page-' + pageName);
-    target.classList.add('active');
-    target.style.opacity = '0';
-    target.style.transition = 'opacity 0.4s';
-    requestAnimationFrame(() => {
-      requestAnimationFrame(() => { target.style.opacity = '1'; });
-    });
-
-    // Scroll to top
-    window.scrollTo({ top: 0 });
-
-    // Nav
-    document.querySelectorAll('.nav-links a').forEach(a => {
-      a.classList.toggle('active', a.dataset.page === pageName);
-    });
-
-    // Close mobile menu
-    document.getElementById('navLinks').classList.remove('open');
-
-    // Track index
-    currentPageIdx = pageOrder.indexOf(pageName);
-    if (currentPageIdx < 0) currentPageIdx = 0;
-
-    // Trigger reveals
-    setTimeout(triggerReveal, 120);
-    setTimeout(initParallax, 50);
-
-    // Glitch on title
-    setTimeout(glitchText, 200);
-
-  }, current ? 200 : 0);
 }
 
 /* ══════════════════════════════════════
@@ -394,7 +326,6 @@ function updateParallax() {
   });
 }
 
-// Also on hero mouse move
 const homeHero = document.getElementById('homeHero');
 if (homeHero) {
   homeHero.addEventListener('mousemove', e => {
@@ -512,24 +443,26 @@ document.addEventListener('keydown', e => {
 /* ══════════════════════════════════════
    UNIVERSE COMPOSITION BAR ANIMATION
 ══════════════════════════════════════ */
-const compObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.querySelectorAll('.comp-segment').forEach((seg, i) => {
-        const targetWidth = seg.style.width;
-        seg.style.width = '0%';
-        setTimeout(() => {
-          seg.style.transition = 'width 1.2s cubic-bezier(0.4,0,0.2,1)';
-          seg.style.width = targetWidth;
-        }, i * 200 + 100);
-      });
-      compObserver.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.5 });
-
 const compBar = document.querySelector('.composition-bar');
-if (compBar) compObserver.observe(compBar);
+if (compBar) {
+  const compObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.querySelectorAll('.comp-segment').forEach((seg, i) => {
+          const targetWidth = seg.style.width;
+          seg.style.width = '0%';
+          setTimeout(() => {
+            seg.style.transition = 'width 1.2s cubic-bezier(0.4,0,0.2,1)';
+            seg.style.width = targetWidth;
+          }, i * 200 + 100);
+        });
+        compObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.5 });
+
+  compObserver.observe(compBar);
+}
 
 /* ══════════════════════════════════════
    CONSOLE SIGNATURE

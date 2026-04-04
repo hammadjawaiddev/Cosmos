@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>COSMOS — Galaxies</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;900&family=Raleway:wght@200;300;400;600&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <meta name="keywords" content="Cosmos, cosmos, Wormholes, Universe, Blackholes">
+  <meta name="description" content="Beyond Time Beyond Gravity">
+</head>
+<body data-page="galaxies">
+
+<!-- LOADING SCREEN -->
+<div id="loader">
+  <div class="loader-spinner"></div>
+  <p class="loader-eyebrow">✦ NASA · ESA · HUBBLE ✦</p>
+  <h1 class="loader-title">COSMOS</h1>
+  <p class="loader-tagline">Entering The Cosmos…</p>
+</div>
+
+<!-- CUSTOM CURSOR -->
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- STARFIELD -->
+<canvas id="starfield"></canvas>
+
+<!-- NAVIGATION -->
+<nav id="mainNav">
+  <a href="index.html" class="nav-logo" data-page="home">✦ COSMOS</a>
+  <button class="nav-hamburger" id="navHamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html" data-page="home">Home</a></li>
+    <li><a href="planets.html" data-page="planets">Planets</a></li>
+    <li><a href="blackholes.html" data-page="blackholes">Black Holes</a></li>
+    <li><a href="galaxies.html" data-page="galaxies">Galaxies</a></li>
+    <li><a href="universe.html" data-page="universe">Universe</a></li>
+    <li><a href="wormholes.html" data-page="wormholes">Wormholes</a></li>
+  </ul>
+</nav>
+
+<!-- GALAXIES PAGE -->
+<div id="page-galaxies" class="page active">
+
+  <section class="page-hero">
+    <div class="page-hero-bg parallax-bg" style="background-image: url('images/background-image.jpg');"></div>
+    <div class="page-hero-overlay"></div>
+    <p class="page-subtitle anim-fade-up" style="--delay:0.2s">Islands of Stars</p>
+    <h1 class="page-title anim-fade-up" style="--delay:0.4s">Galaxies</h1>
+    <div class="page-divider anim-fade-up" style="--delay:0.6s"></div>
+  </section>
+
+  <div class="stats-banner">
+    <div class="stats-banner-item reveal">
+      <span class="stats-number">2 Trillion</span>
+      <span class="stats-label">Galaxies in observable universe</span>
+    </div>
+    <div class="stats-banner-item reveal">
+      <span class="stats-number" style="color:var(--glow-cyan)">400 Billion</span>
+      <span class="stats-label">Stars in the Milky Way</span>
+    </div>
+    <div class="stats-banner-item reveal">
+      <span class="stats-number" style="color:var(--glow-gold)">4.5 Billion</span>
+      <span class="stats-label">Years until Milky Way–Andromeda merger</span>
+    </div>
+  </div>
+
+  <div class="galaxy-feature reveal">
+    <div class="galaxy-feature-image">
+      <img src="images/milky-way.jpg" alt="Milky Way galactic core" loading="lazy">
+      <div class="galaxy-feature-badge">MILKY WAY</div>
+    </div>
+    <div class="galaxy-feature-body">
+      <div class="info-tag">OUR HOME GALAXY</div>
+      <h2>The Milky Way</h2>
+      <p>A barred spiral galaxy approximately 100,000 light-years in diameter, our home contains an estimated 100–400 billion stars and likely more planets. Our solar system orbits about 26,000 light-years from the center, completing one galactic revolution every 225–250 million years — a "cosmic year."</p>
+      <p>At the core lies Sagittarius A*, a supermassive black hole of 4 million solar masses. The galactic plane is threaded with dark dust lanes, brilliant star-forming nebulae, and ancient globular clusters — some nearly as old as the universe itself.</p>
+      <div class="galaxy-specs">
+        <div class="spec"><span>100,000 ly</span>Diameter</div>
+        <div class="spec"><span>~1,000 ly</span>Disk Thickness</div>
+        <div class="spec"><span>~50</span>Satellite Galaxies</div>
+        <div class="spec"><span>Sb/SBb</span>Hubble Type</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="galaxy-feature galaxy-feature--reversed reveal">
+    <div class="galaxy-feature-image">
+      <img src="images/andromeda.jpg" alt="Andromeda Galaxy M31" loading="lazy">
+      <div class="galaxy-feature-badge" style="background: rgba(200,160,74,0.15); border-color: rgba(200,160,74,0.4); color: var(--glow-gold);">ANDROMEDA</div>
+    </div>
+    <div class="galaxy-feature-body">
+      <div class="info-tag" style="color:var(--glow-gold); border-color:rgba(200,160,74,0.3);">LOCAL GROUP</div>
+      <h2>The Andromeda Galaxy</h2>
+      <p>At 2.537 million light-years, Andromeda (M31) is the most distant object visible to the naked eye — and the largest galaxy in our Local Group with roughly one trillion stars. On a dark night it appears as a faint smudge roughly six times the width of the full Moon.</p>
+      <p>Andromeda is approaching us at ~110 km/s. In approximately 4.5 billion years the two galaxies will begin to merge, eventually forming a giant elliptical galaxy astronomers have nicknamed <em style="color:var(--glow-gold)">Milkomeda</em>. Our Sun will almost certainly survive, though its position in the resulting galaxy will change dramatically.</p>
+      <div class="galaxy-specs">
+        <div class="spec"><span>220,000 ly</span>Diameter</div>
+        <div class="spec"><span>~1 Trillion</span>Stars</div>
+        <div class="spec"><span>2.537 Mly</span>Distance</div>
+        <div class="spec"><span>SA(s)b</span>Hubble Type</div>
+      </div>
+    </div>
+  </div>
+
+  <section class="galaxy-types-section reveal">
+    <div class="section-header">
+      <h2>Galaxy Classification — The Hubble Sequence</h2>
+      <p>Edwin Hubble's 1926 morphological classification system remains the foundation of galaxy taxonomy.</p>
+    </div>
+    <div class="galaxy-types-grid">
+      <div class="galaxy-type-card">
+        <div class="galaxy-type-image">
+          <img src="images/spiral.jpg" alt="Spiral Galaxy NGC 4414" loading="lazy">
+        </div>
+        <h4>Spiral Galaxies</h4>
+        <p>Rotating disks of stars with prominent arms. Our Milky Way is a barred spiral (SBb). Arms are sites of active star formation.</p>
+      </div>
+      <div class="galaxy-type-card">
+        <div class="galaxy-type-image">
+          <img src="images/elliptical.jpg" alt="Elliptical galaxy M87" loading="lazy">
+        </div>
+        <h4>Elliptical Galaxies</h4>
+        <p>Smooth, featureless stellar systems, often the result of galactic mergers. M87 hosts the famous supermassive black hole imaged in 2019.</p>
+      </div>
+      <div class="galaxy-type-card">
+        <div class="galaxy-type-image">
+          <img src="images/irregular.jpg" alt="Large Magellanic Cloud" loading="lazy">
+        </div>
+        <h4>Irregular Galaxies</h4>
+        <p>No defined regular shape — often shaped by tidal interactions. The Magellanic Clouds are irregular satellites of the Milky Way, visible from Earth's southern hemisphere.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer><p>✦ COSMOS — Galaxy images: NASA, ESA, ESO, Hubble Space Telescope / Public Domain ✦</p></footer>
+</div>
+
+<!-- SPOTIFY WIDGET -->
+<div class="spotify-widget">
+  <div class="spotify-player" id="spotifyPlayer">
+    <div class="spotify-header">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="#1DB954"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+      <span>Now Playing</span>
+      <button class="spotify-close" onclick="toggleSpotify()">✕</button>
+    </div>
+    <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/track/5aaXqH8rgKZxg61HjECldi?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    <div class="spotify-track-info">
+      <p class="track-name">No Time For Caution</p>
+      <p class="track-artist">Hans Zimmer — Interstellar OST</p>
+    </div>
+  </div>
+  <div class="spotify-tooltip">🎵 Play Interstellar OST</div>
+  <button class="spotify-btn" id="spotifyBtn" onclick="toggleSpotify()" aria-label="Toggle music player">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/>
+    </svg>
+    <span class="spotify-pulse"></span>
+  </button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
