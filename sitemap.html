@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>COSMOS — Sitemap</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;900&family=Raleway:wght@200;300;400;600&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <meta name="keywords" content="Cosmos, Sitemap, Navigation, Planets, Black Holes, Galaxies, Universe, Wormholes">
+  <meta name="description" content="COSMOS Sitemap — Navigate the complete universe of pages. Beyond Time. Beyond Gravity.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.cosmos-interstellar.com/sitemap.html">
+ 
+  <style>
+    /* ═══════════════════════════════════════
+       SITEMAP PAGE — Scoped Styles
+       ═══════════════════════════════════════ */
+ 
+    .sitemap-intro {
+      text-align: center;
+      padding: 60px 40px 20px;
+      max-width: 680px;
+      margin: 0 auto;
+    }
+ 
+    .sitemap-intro p {
+      font-family: 'Raleway', sans-serif;
+      font-weight: 300;
+      font-size: 1.05rem;
+      color: rgba(200, 220, 255, 0.65);
+      letter-spacing: 0.04em;
+      line-height: 1.8;
+    }
+ 
+    /* ── Grid ── */
+    .sitemap-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.5px;
+      max-width: 1200px;
+      margin: 50px auto 80px;
+      padding: 0 40px;
+    }
+ 
+    /* ── Cards ── */
+    .sitemap-card {
+      position: relative;
+      background: rgba(255,255,255,0.025);
+      border: 1px solid rgba(255,255,255,0.07);
+      padding: 40px 36px 36px;
+      cursor: pointer;
+      transition: background 0.35s ease, border-color 0.35s ease, transform 0.35s cubic-bezier(0.4,0,0.2,1);
+      overflow: hidden;
+      text-decoration: none;
+      display: block;
+    }
+ 
+    .sitemap-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+ 
+    .sitemap-card:hover {
+      background: rgba(255,255,255,0.055);
+      border-color: rgba(0, 212, 255, 0.2);
+      transform: translateY(-3px);
+    }
+ 
+    .sitemap-card:hover::before {
+      opacity: 1;
+    }
+ 
+    /* Accent stripe top */
+    .sitemap-card::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: var(--card-accent, linear-gradient(90deg, var(--glow-cyan), var(--glow-purple)));
+      opacity: 0;
+      transition: opacity 0.35s ease;
+    }
+ 
+    .sitemap-card:hover::after {
+      opacity: 1;
+    }
+ 
+    /* ── Card: HOME ── */
+    .sitemap-card[data-page="home"] {
+      --card-accent: linear-gradient(90deg, var(--glow-cyan), #4af5c8);
+      grid-column: 1 / -1;
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      padding: 44px 48px;
+    }
+ 
+    .sitemap-card[data-page="home"] .sm-icon {
+      font-size: 3rem;
+      flex-shrink: 0;
+    }
+ 
+    /* ── Glyph / Icon ── */
+    .sm-icon {
+      font-size: 2rem;
+      margin-bottom: 16px;
+      display: block;
+      line-height: 1;
+      filter: drop-shadow(0 0 10px currentColor);
+    }
+ 
+    /* ── Index number ── */
+    .sm-index {
+      font-family: 'Orbitron', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      color: rgba(255,255,255,0.2);
+      margin-bottom: 10px;
+      display: block;
+    }
+ 
+    /* ── Title ── */
+    .sm-title {
+      font-family: 'Cinzel', serif;
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: #e8eeff;
+      margin: 0 0 10px;
+      letter-spacing: 0.05em;
+    }
+ 
+    .sitemap-card[data-page="home"] .sm-title {
+      font-size: 1.9rem;
+    }
+ 
+    /* ── Description ── */
+    .sm-desc {
+      font-family: 'Raleway', sans-serif;
+      font-weight: 300;
+      font-size: 0.85rem;
+      color: rgba(200, 220, 255, 0.5);
+      line-height: 1.7;
+      margin: 0 0 20px;
+    }
+ 
+    /* ── Meta row ── */
+    .sm-meta {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+ 
+    .sm-tag {
+      font-family: 'Orbitron', monospace;
+      font-size: 0.55rem;
+      letter-spacing: 0.15em;
+      padding: 4px 10px;
+      border: 1px solid rgba(255,255,255,0.1);
+      color: rgba(255,255,255,0.35);
+      text-transform: uppercase;
+    }
+ 
+    .sm-priority {
+      font-family: 'Orbitron', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.1em;
+      color: var(--glow-cyan);
+    }
+ 
+    .sm-priority.gold { color: var(--glow-gold); }
+ 
+    .sm-arrow {
+      margin-left: auto;
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.2);
+      transition: color 0.3s, transform 0.3s;
+    }
+ 
+    .sitemap-card:hover .sm-arrow {
+      color: var(--glow-cyan);
+      transform: translateX(4px);
+    }
+ 
+    /* ── XML block ── */
+    .sitemap-xml-section {
+      max-width: 900px;
+      margin: 0 auto 100px;
+      padding: 0 40px;
+    }
+ 
+    .sitemap-xml-section .full-panel-badge {
+      margin-bottom: 24px;
+    }
+ 
+    .sitemap-xml-section h2 {
+      font-family: 'Cinzel', serif;
+      font-size: 1.5rem;
+      color: #e8eeff;
+      margin-bottom: 8px;
+    }
+ 
+    .sitemap-xml-section p {
+      font-family: 'Raleway', sans-serif;
+      font-weight: 300;
+      font-size: 0.9rem;
+      color: rgba(200,220,255,0.5);
+      margin-bottom: 28px;
+      line-height: 1.7;
+    }
+ 
+    .xml-block {
+      background: rgba(0, 212, 255, 0.03);
+      border: 1px solid rgba(0, 212, 255, 0.12);
+      border-left: 3px solid var(--glow-cyan);
+      padding: 28px 32px;
+      font-family: 'Courier New', monospace;
+      font-size: 0.75rem;
+      color: rgba(200, 240, 255, 0.65);
+      line-height: 1.9;
+      overflow-x: auto;
+      position: relative;
+    }
+ 
+    .xml-block .xml-tag { color: rgba(0, 212, 255, 0.8); }
+    .xml-block .xml-attr { color: rgba(200, 160, 74, 0.85); }
+    .xml-block .xml-val  { color: rgba(100, 255, 180, 0.8); }
+    .xml-block .xml-comment { color: rgba(255,255,255,0.25); font-style: italic; }
+ 
+    .xml-copy-btn {
+      position: absolute;
+      top: 16px; right: 16px;
+      font-family: 'Orbitron', monospace;
+      font-size: 0.55rem;
+      letter-spacing: 0.15em;
+      padding: 6px 14px;
+      border: 1px solid rgba(0,212,255,0.3);
+      background: transparent;
+      color: var(--glow-cyan);
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+ 
+    .xml-copy-btn:hover {
+      background: rgba(0,212,255,0.1);
+    }
+ 
+    /* ── Stats strip ── */
+    .sitemap-stats {
+      display: flex;
+      justify-content: center;
+      gap: 60px;
+      padding: 40px 0;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      margin: 0 40px 60px;
+    }
+ 
+    .sitemap-stat {
+      text-align: center;
+    }
+ 
+    .sitemap-stat-num {
+      font-family: 'Orbitron', monospace;
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--glow-cyan);
+      display: block;
+    }
+ 
+    .sitemap-stat-label {
+      font-family: 'Raleway', sans-serif;
+      font-weight: 300;
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      color: rgba(255,255,255,0.3);
+      text-transform: uppercase;
+      display: block;
+      margin-top: 4px;
+    }
+ 
+    /* ── Responsive ── */
+    @media (max-width: 768px) {
+      .sitemap-grid {
+        grid-template-columns: 1fr;
+        padding: 0 20px;
+        gap: 1px;
+      }
+      .sitemap-card[data-page="home"] {
+        flex-direction: column;
+        gap: 20px;
+        padding: 36px 28px;
+      }
+      .sitemap-xml-section { padding: 0 20px; }
+      .sitemap-stats { gap: 30px; flex-wrap: wrap; padding: 30px 20px; margin: 0 20px 40px; }
+      .sitemap-intro { padding: 40px 24px 10px; }
+    }
+  </style>
+</head>
+<body data-page="sitemap">
+ 
+<!-- CUSTOM CURSOR -->
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+ 
+<!-- STARFIELD -->
+<canvas id="starfield"></canvas>
+ 
+<!-- NAVIGATION -->
+<nav id="mainNav">
+  <a href="index.html" class="nav-logo" data-page="home">✦ COSMOS</a>
+  <button class="nav-hamburger" id="navHamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html" data-page="home">Home</a></li>
+    <li><a href="planets.html" data-page="planets">Planets</a></li>
+    <li><a href="blackholes.html" data-page="blackholes">Black Holes</a></li>
+    <li><a href="galaxies.html" data-page="galaxies">Galaxies</a></li>
+    <li><a href="universe.html" data-page="universe">Universe</a></li>
+    <li><a href="wormholes.html" data-page="wormholes">Wormholes</a></li>
+    <li><a href="sitemap.html" data-page="sitemap" class="active">Sitemap</a></li>
+  </ul>
+</nav>
+ 
+<!-- SITEMAP PAGE -->
+<div id="page-sitemap" class="page active">
+ 
+  <!-- HERO -->
+  <section class="page-hero">
+    <div class="page-hero-bg parallax-bg" style="background-image: url('images/background-image.jpg');"></div>
+    <div class="page-hero-overlay" style="background: linear-gradient(to bottom, rgba(0,0,10,0.5), rgba(0,0,10,0.96));"></div>
+    <p class="page-subtitle anim-fade-up" style="--delay:0.2s">Navigate the Cosmos</p>
+    <h1 class="page-title anim-fade-up" style="--delay:0.4s">Sitemap</h1>
+    <p class="page-hero-caption anim-fade-up" style="--delay:0.6s">Every destination in our universe — structured for humans and search engines alike.</p>
+    <div class="page-divider anim-fade-up" style="--delay:0.8s"></div>
+  </section>
+ 
+  <!-- STATS -->
+  <div class="sitemap-stats reveal">
+    <div class="sitemap-stat">
+      <span class="sitemap-stat-num">7</span>
+      <span class="sitemap-stat-label">Total Pages</span>
+    </div>
+    <div class="sitemap-stat">
+      <span class="sitemap-stat-num" style="color: var(--glow-gold);">1.0</span>
+      <span class="sitemap-stat-label">Home Priority</span>
+    </div>
+    <div class="sitemap-stat">
+      <span class="sitemap-stat-num" style="color: var(--glow-purple);">0.9</span>
+      <span class="sitemap-stat-label">Sitemap Protocol</span>
+    </div>
+    <div class="sitemap-stat">
+      <span class="sitemap-stat-num">2025</span>
+      <span class="sitemap-stat-label">Last Updated</span>
+    </div>
+  </div>
+ 
+  <!-- INTRO -->
+  <div class="sitemap-intro reveal">
+    <p>Every page of COSMOS is catalogued below. Each entry links directly to its destination — whether you're a human explorer or a Googlebot parsing the universe.</p>
+  </div>
+ 
+  <!-- PAGE CARDS GRID -->
+  <div class="sitemap-grid">
+ 
+    <!-- HOME — spans full width, highest priority -->
+    <a href="index.html" class="sitemap-card reveal" data-page="home">
+      <div>
+        <span class="sm-icon" style="color: var(--glow-cyan);">✦</span>
+      </div>
+      <div style="flex: 1;">
+        <span class="sm-index">00 · INDEX</span>
+        <h2 class="sm-title">Home — Beyond Time. Beyond Gravity.</h2>
+        <p class="sm-desc">The gateway to COSMOS. Full hero experience, feature previews, image showcase, and the Quranic verse about the beauty of stars. The loader, starfield, and navigation all initialise here.</p>
+        <div class="sm-meta">
+          <span class="sm-tag">index.html</span>
+          <span class="sm-tag">changefreq: weekly</span>
+          <span class="sm-priority gold">Priority 1.0</span>
+          <span class="sm-arrow">→</span>
+        </div>
+      </div>
+    </a>
+ 
+    <!-- PLANETS -->
+    <a href="planets.html" class="sitemap-card reveal" data-page="planets" style="--card-accent: linear-gradient(90deg, #4af5c8, var(--glow-cyan));">
+      <span class="sm-icon" style="color: #4af5c8;">🪐</span>
+      <span class="sm-index">01 · PLANETS</span>
+      <h2 class="sm-title">Planets</h2>
+      <p class="sm-desc">Eight worlds of our solar system — from Mercury's scorched plains to Neptune's supersonic winds. Interactive planet cards with tilt effects and orbital data.</p>
+      <div class="sm-meta">
+        <span class="sm-tag">planets.html</span>
+        <span class="sm-tag">monthly</span>
+        <span class="sm-priority">Priority 0.8</span>
+        <span class="sm-arrow">→</span>
+      </div>
+    </a>
+ 
+    <!-- BLACK HOLES -->
+    <a href="blackholes.html" class="sitemap-card reveal" data-page="blackholes" style="--card-accent: linear-gradient(90deg, var(--glow-purple), #ff4af5);">
+      <span class="sm-icon" style="color: var(--glow-purple);">⬤</span>
+      <span class="sm-index">02 · BLACK HOLES</span>
+      <h2 class="sm-title">Black Holes</h2>
+      <p class="sm-desc">M87*, Sagittarius A*, event horizons, Hawking radiation, and relativistic jets. Includes the first direct image of a black hole captured by EHT in 2019.</p>
+      <div class="sm-meta">
+        <span class="sm-tag">blackholes.html</span>
+        <span class="sm-tag">monthly</span>
+        <span class="sm-priority">Priority 0.8</span>
+        <span class="sm-arrow">→</span>
+      </div>
+    </a>
+ 
+    <!-- GALAXIES -->
+    <a href="galaxies.html" class="sitemap-card reveal" data-page="galaxies" style="--card-accent: linear-gradient(90deg, var(--glow-gold), #ffb84a);">
+      <span class="sm-icon" style="color: var(--glow-gold);">🌌</span>
+      <span class="sm-index">03 · GALAXIES</span>
+      <h2 class="sm-title">Galaxies</h2>
+      <p class="sm-desc">The Milky Way, Andromeda collision in 4.5 billion years, Hubble sequence classification. Two trillion galaxies shimmer across the observable universe.</p>
+      <div class="sm-meta">
+        <span class="sm-tag">galaxies.html</span>
+        <span class="sm-tag">monthly</span>
+        <span class="sm-priority">Priority 0.8</span>
+        <span class="sm-arrow">→</span>
+      </div>
+    </a>
+ 
+    <!-- UNIVERSE -->
+    <a href="universe.html" class="sitemap-card reveal" data-page="universe" style="--card-accent: linear-gradient(90deg, #7b2fff, var(--glow-cyan));">
+      <span class="sm-icon" style="color: #7b2fff;">◈</span>
+      <span class="sm-index">04 · UNIVERSE</span>
+      <h2 class="sm-title">Universe &amp; Theories</h2>
+      <p class="sm-desc">The Big Bang, dark matter, dark energy, wormholes, the multiverse, and cosmic endpoints. Composition bar: 68% dark energy, 27% dark matter, 5% ordinary matter.</p>
+      <div class="sm-meta">
+        <span class="sm-tag">universe.html</span>
+        <span class="sm-tag">monthly</span>
+        <span class="sm-priority">Priority 0.8</span>
+        <span class="sm-arrow">→</span>
+      </div>
+    </a>
+ 
+    <!-- WORMHOLES -->
+    <a href="wormholes.html" class="sitemap-card reveal" data-page="wormholes" style="--card-accent: linear-gradient(90deg, var(--glow-cyan), #2fffb4);">
+      <span class="sm-icon" style="color: var(--glow-cyan);">⟲</span>
+      <span class="sm-index">05 · WORMHOLES</span>
+      <h2 class="sm-title">Wormholes</h2>
+      <p class="sm-desc">Einstein-Rosen bridges, traversable tunnels through spacetime, exotic matter requirements, and the physics that inspired the film Interstellar.</p>
+      <div class="sm-meta">
+        <span class="sm-tag">wormholes.html</span>
+        <span class="sm-tag">monthly</span>
+        <span class="sm-priority">Priority 0.8</span>
+        <span class="sm-arrow">→</span>
+      </div>
+    </a>
+ 
+    <!-- SITEMAP ITSELF -->
+    <a href="sitemap.html" class="sitemap-card reveal" data-page="sitemap" style="--card-accent: linear-gradient(90deg, rgba(255,255,255,0.2), rgba(255,255,255,0.05));">
+      <span class="sm-icon" style="color: rgba(255,255,255,0.4);">⊞</span>
+      <span class="sm-index">06 · SITEMAP</span>
+      <h2 class="sm-title">Sitemap</h2>
+      <p class="sm-desc">You are here. A structured index of all COSMOS pages for human navigation and search engine crawling. Mirrors sitemap.xml for Google compliance.</p>
+      <div class="sm-meta">
+        <span class="sm-tag">sitemap.html</span>
+        <span class="sm-tag">monthly</span>
+        <span class="sm-priority" style="color: rgba(255,255,255,0.3);">Priority 0.3</span>
+        <span class="sm-arrow">→</span>
+      </div>
+    </a>
+ 
+  </div>
+ 
+  <footer>
+    <p>✦ COSMOS — Sitemap last updated April 4, 2025 · Sitemaps Protocol 0.9 · Google Search Console compatible ✦</p>
+  </footer>
+</div>
+ 
+<!-- SPOTIFY WIDGET -->
+<div class="spotify-widget">
+  <div class="spotify-player" id="spotifyPlayer">
+    <div class="spotify-header">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="#1DB954"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+      <span>Now Playing</span>
+      <button class="spotify-close" onclick="toggleSpotify()">✕</button>
+    </div>
+    <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/track/5aaXqH8rgKZxg61HjECldi?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    <div class="spotify-track-info">
+      <p class="track-name">No Time For Caution</p>
+      <p class="track-artist">Hans Zimmer — Interstellar OST</p>
+    </div>
+  </div>
+  <div class="spotify-tooltip">🎵 Play Interstellar OST</div>
+  <button class="spotify-btn" id="spotifyBtn" onclick="toggleSpotify()" aria-label="Toggle music player">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/>
+    </svg>
+    <span class="spotify-pulse"></span>
+  </button>
+</div>
+ 
+<script src="script.js"></script>

@@ -199,9 +199,10 @@ const pageFiles = {
   galaxies:   'galaxies.html',
   universe:   'universe.html',
   wormholes:  'wormholes.html',
+  sitemap:    'sitemap.html'
 };
 
-const pageOrder = ['home', 'planets', 'blackholes', 'galaxies', 'universe', 'wormholes'];
+const pageOrder = ['home', 'planets', 'blackholes', 'galaxies', 'universe', 'wormholes', 'sitemap'];
 
 /* Detect which page we are on from <body data-page="…"> */
 const bodyPage = document.body.dataset.page || 'home';
