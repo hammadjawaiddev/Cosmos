@@ -31,42 +31,42 @@
 /* ══════════════════════════════════════
    CUSTOM CURSOR
 ══════════════════════════════════════ */
-const cursor = document.getElementById('cursor');
-const cursorRing = document.getElementById('cursorRing');
-let mouseX = window.innerWidth / 2;
-let mouseY = window.innerHeight / 2;
-let ringX = mouseX;
-let ringY = mouseY;
+// const cursor = document.getElementById('cursor');
+// const cursorRing = document.getElementById('cursorRing');
+// let mouseX = window.innerWidth / 2;
+// let mouseY = window.innerHeight / 2;
+// let ringX = mouseX;
+// let ringY = mouseY;
 
-document.addEventListener('mousemove', e => {
-  mouseX = e.clientX;
-  mouseY = e.clientY;
-  cursor.style.left = mouseX + 'px';
-  cursor.style.top = mouseY + 'px';
-});
+// document.addEventListener('mousemove', e => {
+//   mouseX = e.clientX;
+//   mouseY = e.clientY;
+//   cursor.style.left = mouseX + 'px';
+//   cursor.style.top = mouseY + 'px';
+// });
 
-(function animateRing() {
-  ringX += (mouseX - ringX) * 0.1;
-  ringY += (mouseY - ringY) * 0.1;
-  cursorRing.style.left = ringX + 'px';
-  cursorRing.style.top = ringY + 'px';
-  requestAnimationFrame(animateRing);
-})();
+// (function animateRing() {
+//   ringX += (mouseX - ringX) * 0.1;
+//   ringY += (mouseY - ringY) * 0.1;
+//   cursorRing.style.left = ringX + 'px';
+//   cursorRing.style.top = ringY + 'px';
+//   requestAnimationFrame(animateRing);
+// })();
 
-function addCursorHover(selector) {
-  document.querySelectorAll(selector).forEach(el => {
-    el.addEventListener('mouseenter', () => {
-      cursor.classList.add('hover');
-      cursorRing.classList.add('hover');
-    });
-    el.addEventListener('mouseleave', () => {
-      cursor.classList.remove('hover');
-      cursorRing.classList.remove('hover');
-    });
-  });
-}
+// function addCursorHover(selector) {
+//   document.querySelectorAll(selector).forEach(el => {
+//     el.addEventListener('mouseenter', () => {
+//       cursor.classList.add('hover');
+//       cursorRing.classList.add('hover');
+//     });
+//     el.addEventListener('mouseleave', () => {
+//       cursor.classList.remove('hover');
+//       cursorRing.classList.remove('hover');
+//     });
+//   });
+// }
 
-addCursorHover('a, button, .planet-card, .feature-card, .theory-card, .galaxy-type-card, .bh-info-card, .showcase-item');
+// addCursorHover('a, button, .planet-card, .feature-card, .theory-card, .galaxy-type-card, .bh-info-card, .showcase-item');
 
 /* ══════════════════════════════════════
    STARFIELD CANVAS
@@ -264,13 +264,13 @@ function showPage(pageName) {
 /* ══════════════════════════════════════
    NAVIGATION EVENT DELEGATION
 ══════════════════════════════════════ */
-document.addEventListener('click', e => {
-  const link = e.target.closest('[data-page]');
-  if (!link) return;
-  e.preventDefault();
-  const page = link.dataset.page;
-  if (page) showPage(page);
-});
+// document.addEventListener('click', e => {
+//   const link = e.target.closest('[data-page]');
+//   if (!link) return;
+//   e.preventDefault();
+//   const page = link.dataset.page;
+//   if (page) showPage(page);
+// });
 
 // Hamburger
 document.getElementById('navHamburger').addEventListener('click', () => {
